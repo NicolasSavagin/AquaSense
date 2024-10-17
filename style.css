@@ -1,0 +1,206 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 20px; /* Adicionando um pouco de espaço ao redor do corpo */
+}
+
+#aquariumForm {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #e0f7fa; /* Cor de fundo suave */
+  border: 1px solid #00796b; /* Borda com cor correspondente */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
+}
+
+#aquariumNameInput {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s; /* Transição suave ao passar o mouse */
+}
+
+#aquariumNameInput:focus {
+  border-color: #00796b; /* Mudança de cor na borda ao focar */
+  outline: none; /* Remove a borda padrão de foco */
+}
+
+button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #00796b; /* Cor de fundo do botão */
+  color: white; /* Cor do texto */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transição suave ao passar o mouse */
+}
+
+button:hover {
+  background-color: #004d40; /* Cor do botão ao passar o mouse */
+}
+
+#aquariumContainer .aquarium {
+  border: 1px solid #333;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #e0f7fa;
+  border-radius: 10px;
+}
+
+.aquarium-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer; /* Adiciona cursor de ponteiro para indicar que é clicável */
+}
+
+.aquarium-header h2 {
+  margin: 0;
+}
+
+.add-icon {
+  font-size: 24px; /* Aumenta o tamanho do ícone */
+  cursor: pointer;
+  color: #00796b; /* Cor padrão */
+  margin: 0 10px; /* Margem em torno do ícone */
+  transition: color 0.3s; /* Transição suave ao passar o mouse */
+}
+
+.add-icon:hover {
+  color: #004d40; /* Cor ao passar o mouse */
+}
+
+.species-list {
+  list-style: none;
+  padding: 0;
+}
+
+.species-item {
+  background-color: #b2dfdb;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-species {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+  max-width: 600px; 
+  border-radius: 10px;
+}
+
+.closeSpecies {
+  color: #aaa;
+  float: right;
+  font-size: 32px;
+  font-weight: bold;
+}
+.closeImg {
+  color: #aaa;
+  float: right;
+  font-size: 32px;
+  font-weight: bold;
+  position: absolute;
+  right: 30%;
+  margin-top: 10%;
+}
+.closeImg:hover,
+.closeImg:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.closeSpecies:hover,
+.closeSpecies:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 32px;
+  font-weight: bold;
+  position: absolute;
+  right: 5%;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+#largeImage {
+  width: 100%;
+  height: auto;
+}
+.species-image {
+    width: 80px; /* Ajuste a largura desejada */
+    height: 50px; /* Ajuste a altura desejada */
+    object-fit: cover; /* Garante que a imagem mantenha a proporção */
+    margin-right: 10px;
+    vertical-align: middle;
+    cursor: pointer; /* Adiciona cursor de ponteiro para imagens */
+}
+.modal-image img {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%; /* Faz a imagem ocupar toda a largura do modal */
+  height: auto; /* Mantém a proporção */
+  max-width: 600px; 
+  border-radius: 10px;
+}
+.modal-compatibility {
+  background-color: #fff; /* Fundo branco */
+  margin: 10% auto; /* Centraliza vertical e horizontalmente */
+  padding: 20px; /* Espaçamento interno */
+  border: 1px solid #ddd; /* Borda leve */
+  border-radius: 8px; /* Bordas arredondadas */
+  width: 80%; /* Largura do modal */
+  max-width: 500px; /* Largura máxima */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ao redor do modal */
+  position: relative; /* Para o botão de fechar */
+}
+/* Título do Modal */
+.modal-compatibility h2 {
+  font-size: 1.5em;
+  margin-top: 0; /* Remove margem superior */
+  color: #333;
+}
+
+/* Mensagem de Compatibilidade */
+#compatibilityMessage {
+  font-size: 1em;
+  color: #555;
+  margin-top: 15px; /* Espaçamento acima da mensagem */
+  line-height: 1.4;
+}

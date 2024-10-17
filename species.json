@@ -1,0 +1,146 @@
+[
+    { 
+        "name": "Tetra Neon", 
+        "idealPH": 6.0, 
+        "description": "Peixe pequeno e colorido.", 
+        "behavior": "Pacífico", 
+        "image": "img/neon.jpg", 
+        "compatibility": ["Acará Bandeira", "Guppy", "Corydoras", "Planta Elódea", "Planta Java Fern"]
+    }, 
+    { 
+        "name": "Acará Bandeira", 
+        "idealPH": 6.5, 
+        "description": "Peixe de nadadeiras longas.", 
+        "behavior": "Pacífico", 
+        "image": "img/acara.jpeg", 
+        "compatibility": ["Tetra Neon", "Guppy", "Corydoras", "Peixe Gato", "Planta Cabomba"]
+    }, 
+    { 
+        "name": "Betta", 
+        "idealPH": 6.8, 
+        "description": "Peixe de cauda longa e colorida.", 
+        "behavior": "Agressivo com machos", 
+        "image": "img/betta.jpg", 
+        "compatibility": ["Guppy", "Corydoras", "Siamese Algae Eater"]
+    }, 
+    { 
+        "name": "Planta Elódea", 
+        "idealPH": 6.0, 
+        "description": "Planta aquática para aquários.", 
+        "behavior": "Ajuda na oxigenação", 
+        "image": "img/elodea.jpg", 
+        "compatibility": ["Tetra Neon", "Guppy", "Corydoras"]
+    },
+    { 
+        "name": "Peixe Gato", 
+        "idealPH": 6.5, 
+        "description": "Peixe de fundo, sociável e tranquilo.", 
+        "behavior": "Pacífico", 
+        "image": "img/gato.jpg", 
+        "compatibility": ["Acará Bandeira", "Corydoras", "Siamese Algae Eater"]
+    },
+    { 
+        "name": "Ciclídeo do Malawi", 
+        "idealPH": 7.5, 
+        "description": "Peixe colorido e territorial.", 
+        "behavior": "Agressivo", 
+        "image": "img/ciclide.jpg", 
+        "compatibility": []
+    },
+    { 
+        "name": "Peixe Palhaço", 
+        "idealPH": 7.0, 
+        "description": "Peixe colorido, famoso por sua relação com anêmonas.", 
+        "behavior": "Pacífico", 
+        "image": "img/palhaco.jpg", 
+        "compatibility": []
+    },
+    { 
+        "name": "Planta Cabomba", 
+        "idealPH": 6.5, 
+        "description": "Planta aquática com folhas finas e delicadas.", 
+        "behavior": "Ajuda na oxigenação", 
+        "image": "img/cabomba.jpg", 
+        "compatibility": ["Acará Bandeira", "Guppy"]
+    },
+    { 
+        "name": "Peixe Dourado", 
+        "idealPH": 6.5, 
+        "description": "Peixe popular de aquários.", 
+        "behavior": "Pacífico", 
+        "image": "img/dourado.jpg", 
+        "compatibility": ["Guppy", "Corydoras", "Peixe Gato"]
+    },
+    { 
+        "name": "Siamese Algae Eater", 
+        "idealPH": 6.5, 
+        "description": "Peixe que se alimenta de algas, ideal para aquários comunitários.", 
+        "behavior": "Pacífico", 
+        "image": "img/siamese.jpg", 
+        "compatibility": ["Guppy", "Corydoras", "Peixe Gato"]
+    },
+    { 
+        "name": "Planta Java Fern", 
+        "idealPH": 6.0, 
+        "description": "Planta resistente e fácil de cuidar.", 
+        "behavior": "Ajuda na oxigenação", 
+        "image": "img/java_fern.jpg", 
+        "compatibility": ["Tetra Neon", "Guppy", "Corydoras"]
+    },
+    { 
+        "name": "Guppy", 
+        "idealPH": 6.8, 
+        "description": "Peixe pequeno e colorido, fácil de manter.", 
+        "behavior": "Pacífico", 
+        "image": "img/guppy.jpg", 
+        "compatibility": ["Tetra Neon", "Acará Bandeira", "Corydoras", "Betta"]
+    },
+    { 
+        "name": "Corydoras", 
+        "idealPH": 6.5, 
+        "description": "Peixe de fundo, ótimo para aquários comunitários.", 
+        "behavior": "Pacífico", 
+        "image": "img/corydoras.jpg", 
+        "compatibility": ["Tetra Neon", "Acará Bandeira", "Guppy"]
+    },
+    { 
+        "name": "Planta Anubias", 
+        "idealPH": 6.0, 
+        "description": "Planta resistente, ideal para aquários de baixa luminosidade.", 
+        "behavior": "Ajuda na oxigenação", 
+        "image": "img/anubias.jpg", 
+        "compatibility": ["Guppy", "Corydoras"]
+    },
+    { 
+        "name": "Rasbora", 
+        "idealPH": 6.0, 
+        "description": "Peixe pequeno e ativo, ideal para cardumes.", 
+        "behavior": "Pacífico", 
+        "image": "img/rasbora.jpg", 
+        "compatibility": ["Guppy", "Corydoras"]
+    },
+    { 
+        "name": "Planta Vallisneria", 
+        "idealPH": 6.0, 
+        "description": "Planta aquática de crescimento rápido, ideal para aquários grandes.", 
+        "behavior": "Ajuda na oxigenação", 
+        "image": "img/vallisneria.jpg", 
+        "compatibility": ["Guppy", "Corydoras"]
+    },
+    { 
+        "name": "Neocaridina", 
+        "idealPH": 6.5, 
+        "description": "Camarão de água doce, ajuda a controlar algas.", 
+        "behavior": "Pacífico", 
+        "image": "img/neocaridina.jpg", 
+        "compatibility": ["Guppy", "Corydoras"]
+    },
+    { 
+        "name": "Peixe Anjo", 
+        "idealPH": 6.5, 
+        "description": "Peixe majestoso e territorial.", 
+        "behavior": "Agressivo", 
+        "image": "img/peixe_anjo.jpg", 
+        "compatibility": []
+    }
+]

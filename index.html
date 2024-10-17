@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciador de Aquário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Gerenciador de Aquário</h1>
+    <div id="aquariumForm">
+        <input type="text" id="aquariumNameInput" placeholder="Nome do Aquário">
+        <button onclick="createAquarium()">Criar Aquário</button>
+    </div>
+    <div id="aquariumContainer"></div>
+
+    <!-- Modal para selecionar espécies -->
+    <div id="speciesModal" class="modal">
+        <div class="modal-species">
+            <span class="closeSpecies" onclick="closeModal('speciesModal')">&times;</span>
+            <h2>Escolha uma Espécie</h2>
+            <div id="speciesList"></div>
+        </div>
+    </div>
+
+    <!-- Modal para visualizar a imagem -->
+    <div id="imageModal" class="modal">
+      <div class="modal-image">
+          <span class="closeImg" onclick="closeModal('imageModal')">&times;</span>
+          <img id="modalImage" src="" alt="Imagem da Espécie">
+      </div>
+  </div>
+    <!-- Modal de Aviso de Compatibilidade -->
+    <div id="compatibilityModal" class="modal">
+      <div class="modal-compatibility">
+          <span class="close" onclick="closeModal('compatibilityModal')">&times;</span>
+          <h2>Aviso de Compatibilidade</h2>
+      </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
