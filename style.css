@@ -204,3 +204,29 @@ button:hover {
   margin-top: 15px; /* Espaçamento acima da mensagem */
   line-height: 1.4;
 }
+/* Estilo do conteúdo do modal */
+.modal-graph {
+  background-color: #ffffff; /* Cor de fundo branca para o conteúdo */
+  margin: 5% auto; /* Centraliza o modal */
+  padding: 20px;
+  border-radius: 10px; /* Bordas arredondadas */
+  width: 80%; /* Largura do modal */
+  max-width: 800px; /* Largura máxima */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  position: relative;
+}
+
+/* Estilo do título do gráfico */
+.modal-graph h2 {
+  color: #00796b; /* Cor de destaque */
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+/* Estilo para o canvas do gráfico */
+#phGraphCanvas {
+  width: 100% !important; /* Garante que o gráfico ocupe toda a largura */
+  height: 400px !important; /* Definindo altura fixa para o gráfico */
+  border-radius: 8px; /* Bordas arredondadas */
+  background-color: #f1f1f1; /* Cor de fundo do gráfico */
+}
