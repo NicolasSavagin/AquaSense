@@ -19,7 +19,7 @@ The **Aquarium Management System** is a web-based application designed for aquar
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/aquarium-management-system.git
+    git clone https://github.com/NicolasSavagin/AquaSense
     ```
 2. Open `index.html` in your web browser.
 
