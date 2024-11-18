@@ -1,19 +1,33 @@
 [
     { 
         "name": "Tetra Neon", 
-        "idealPH": 6.0, 
+        "idealPH": 6.7, 
         "description": "Peixe pequeno e colorido.", 
         "behavior": "Pacífico", 
         "image": "img/neon.jpg", 
-        "compatibility": ["Acará Bandeira", "Guppy", "Corydoras", "Planta Elódea", "Planta Java Fern"]
-    }, 
+        "compatibility": ["Acará Bandeira", "Guppy", "Corydoras", "Planta Elódea", "Planta Java Fern"],
+        "maxFishPerLiter": 10, 
+        "compatibleQuantity": { "Acará Bandeira": 2, "Guppy": 3, "Corydoras": 4, "Planta Elódea": 5, "Planta Java Fern": 5 }
+    },
+    {
+        "name": "Peixe Disco",
+        "idealPH": 6.5,
+        "description": "Peixe de formato circular e cores vibrantes.",
+        "behavior": "Pacífico",
+        "image": "img/disco.jpeg",
+        "compatibility": ["Tetra Neon", "Ramirezi", "Corydoras", "Ancistrus", "Planta Anubias"],
+        "maxFishPerLiter": 3,
+        "compatibleQuantity": {"Tetra Neon": 10,"Ramirezi": 2,"Corydoras": 4,"Ancistrus": 2,"Planta Anubias": 5}
+    },     
     { 
         "name": "Acará Bandeira", 
-        "idealPH": 6.5, 
+        "idealPH": 10, 
         "description": "Peixe de nadadeiras longas.", 
         "behavior": "Pacífico", 
         "image": "img/acara.jpeg", 
-        "compatibility": ["Tetra Neon", "Guppy", "Corydoras", "Peixe Gato", "Planta Cabomba"]
+        "compatibility": ["Tetra Neon", "Guppy", "Corydoras", "Peixe Gato", "Planta Cabomba"],
+        "maxFishPerLiter": 5, 
+        "compatibleQuantity": { "Tetra Neon": 3, "Guppy": 2, "Corydoras": 4, "Peixe Gato": 3, "Planta Cabomba": 4 }
     }, 
     { 
         "name": "Betta", 
@@ -21,7 +35,9 @@
         "description": "Peixe de cauda longa e colorida.", 
         "behavior": "Agressivo com machos", 
         "image": "img/betta.jpg", 
-        "compatibility": ["Guppy", "Corydoras", "Siamese Algae Eater"]
+        "compatibility": ["Guppy", "Corydoras", "Siamese Algae Eater","Planta Java Fern"],
+        "maxFishPerLiter": 2, 
+        "compatibleQuantity": { "Guppy": 1, "Corydoras": 3, "Siamese Algae Eater": 2,"Planta Java Fern": 3 }
     }, 
     { 
         "name": "Planta Elódea", 
@@ -29,7 +45,9 @@
         "description": "Planta aquática para aquários.", 
         "behavior": "Ajuda na oxigenação", 
         "image": "img/elodea.jpg", 
-        "compatibility": ["Tetra Neon", "Guppy", "Corydoras"]
+        "compatibility": ["Tetra Neon", "Guppy", "Corydoras"],
+        "maxFishPerLiter": 10, 
+        "compatibleQuantity": { "Tetra Neon": 5, "Guppy": 5, "Corydoras": 6 }
     },
     { 
         "name": "Peixe Gato", 
@@ -37,7 +55,9 @@
         "description": "Peixe de fundo, sociável e tranquilo.", 
         "behavior": "Pacífico", 
         "image": "img/gato.jpg", 
-        "compatibility": ["Acará Bandeira", "Corydoras", "Siamese Algae Eater"]
+        "compatibility": ["Acará Bandeira", "Corydoras", "Siamese Algae Eater"],
+        "maxFishPerLiter": 4, 
+        "compatibleQuantity": { "Acará Bandeira": 2, "Corydoras": 4, "Siamese Algae Eater": 2 }
     },
     { 
         "name": "Ciclídeo do Malawi", 
@@ -45,15 +65,19 @@
         "description": "Peixe colorido e territorial.", 
         "behavior": "Agressivo", 
         "image": "img/ciclide.jpg", 
-        "compatibility": []
+        "compatibility": [],
+        "maxFishPerLiter": 2, 
+        "compatibleQuantity": {}
     },
     { 
         "name": "Peixe Palhaço", 
         "idealPH": 7.0, 
         "description": "Peixe colorido, famoso por sua relação com anêmonas.", 
         "behavior": "Pacífico", 
-        "image": "img/palhaco.jpg", 
-        "compatibility": []
+        "image": "img/palhaco.jpeg", 
+        "compatibility": [],
+        "maxFishPerLiter": 3, 
+        "compatibleQuantity": {}
     },
     { 
         "name": "Planta Cabomba", 
@@ -61,7 +85,9 @@
         "description": "Planta aquática com folhas finas e delicadas.", 
         "behavior": "Ajuda na oxigenação", 
         "image": "img/cabomba.jpg", 
-        "compatibility": ["Acará Bandeira", "Guppy"]
+        "compatibility": ["Acará Bandeira", "Guppy"],
+        "maxFishPerLiter": 8, 
+        "compatibleQuantity": { "Acará Bandeira": 4, "Guppy": 5 }
     },
     { 
         "name": "Peixe Dourado", 
@@ -69,15 +95,19 @@
         "description": "Peixe popular de aquários.", 
         "behavior": "Pacífico", 
         "image": "img/dourado.jpg", 
-        "compatibility": ["Guppy", "Corydoras", "Peixe Gato"]
+        "compatibility": ["Guppy", "Corydoras", "Peixe Gato"],
+        "maxFishPerLiter": 4, 
+        "compatibleQuantity": { "Guppy": 3, "Corydoras": 5, "Peixe Gato": 2 }
     },
     { 
         "name": "Siamese Algae Eater", 
         "idealPH": 6.5, 
         "description": "Peixe que se alimenta de algas, ideal para aquários comunitários.", 
         "behavior": "Pacífico", 
-        "image": "img/siamese.jpg", 
-        "compatibility": ["Guppy", "Corydoras", "Peixe Gato"]
+        "image": "img/siamese.jpeg", 
+        "compatibility": ["Guppy", "Corydoras", "Peixe Gato"],
+        "maxFishPerLiter": 5, 
+        "compatibleQuantity": { "Guppy": 4, "Corydoras": 5, "Peixe Gato": 3 }
     },
     { 
         "name": "Planta Java Fern", 
@@ -85,23 +115,29 @@
         "description": "Planta resistente e fácil de cuidar.", 
         "behavior": "Ajuda na oxigenação", 
         "image": "img/java_fern.jpg", 
-        "compatibility": ["Tetra Neon", "Guppy", "Corydoras"]
+        "compatibility": ["Tetra Neon", "Guppy", "Corydoras"],
+        "maxFishPerLiter": 8, 
+        "compatibleQuantity": { "Tetra Neon": 4, "Guppy": 5, "Corydoras": 6 }
     },
     { 
         "name": "Guppy", 
         "idealPH": 6.8, 
         "description": "Peixe pequeno e colorido, fácil de manter.", 
         "behavior": "Pacífico", 
-        "image": "img/guppy.jpg", 
-        "compatibility": ["Tetra Neon", "Acará Bandeira", "Corydoras", "Betta"]
+        "image": "img/guppy.jpeg", 
+        "compatibility": ["Tetra Neon", "Acará Bandeira", "Corydoras", "Betta"],
+        "maxFishPerLiter": 6, 
+        "compatibleQuantity": { "Tetra Neon": 4, "Acará Bandeira": 3, "Corydoras": 5, "Betta": 2 }
     },
     { 
         "name": "Corydoras", 
         "idealPH": 6.5, 
         "description": "Peixe de fundo, ótimo para aquários comunitários.", 
         "behavior": "Pacífico", 
-        "image": "img/corydoras.jpg", 
-        "compatibility": ["Tetra Neon", "Acará Bandeira", "Guppy"]
+        "image": "img/corydoras.jpeg", 
+        "compatibility": ["Tetra Neon", "Acará Bandeira", "Guppy"],
+        "maxFishPerLiter": 6, 
+        "compatibleQuantity": { "Tetra Neon": 5, "Acará Bandeira": 3, "Guppy": 4 }
     },
     { 
         "name": "Planta Anubias", 
@@ -109,7 +145,9 @@
         "description": "Planta resistente, ideal para aquários de baixa luminosidade.", 
         "behavior": "Ajuda na oxigenação", 
         "image": "img/anubias.jpg", 
-        "compatibility": ["Guppy", "Corydoras"]
+        "compatibility": ["Guppy", "Corydoras"],
+        "maxFishPerLiter": 8, 
+        "compatibleQuantity": { "Guppy": 5, "Corydoras": 4 }
     },
     { 
         "name": "Rasbora", 
@@ -117,30 +155,8 @@
         "description": "Peixe pequeno e ativo, ideal para cardumes.", 
         "behavior": "Pacífico", 
         "image": "img/rasbora.jpg", 
-        "compatibility": ["Guppy", "Corydoras"]
-    },
-    { 
-        "name": "Planta Vallisneria", 
-        "idealPH": 6.0, 
-        "description": "Planta aquática de crescimento rápido, ideal para aquários grandes.", 
-        "behavior": "Ajuda na oxigenação", 
-        "image": "img/vallisneria.jpg", 
-        "compatibility": ["Guppy", "Corydoras"]
-    },
-    { 
-        "name": "Neocaridina", 
-        "idealPH": 6.5, 
-        "description": "Camarão de água doce, ajuda a controlar algas.", 
-        "behavior": "Pacífico", 
-        "image": "img/neocaridina.jpg", 
-        "compatibility": ["Guppy", "Corydoras"]
-    },
-    { 
-        "name": "Peixe Anjo", 
-        "idealPH": 6.5, 
-        "description": "Peixe majestoso e territorial.", 
-        "behavior": "Agressivo", 
-        "image": "img/peixe_anjo.jpg", 
-        "compatibility": []
+        "compatibility": ["Guppy", "Corydoras"],
+        "maxFishPerLiter": 10, 
+        "compatibleQuantity": { "Guppy": 5, "Corydoras": 6 }
     }
 ]
