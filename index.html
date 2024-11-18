@@ -2,13 +2,17 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de Aquário</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Link para o Chart.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <h1>Gerenciador de Aquário</h1>
     <div id="aquariumForm">
         <input type="text" id="aquariumNameInput" placeholder="Nome do Aquário">
+        <input type="number" id="aquariumVolumeInput" placeholder="Litragem do Aquário" min="1">
         <button onclick="createAquarium()">Criar Aquário</button>
     </div>
     <div id="aquariumContainer"></div>
@@ -24,18 +28,41 @@
 
     <!-- Modal para visualizar a imagem -->
     <div id="imageModal" class="modal">
-      <div class="modal-image">
-          <span class="closeImg" onclick="closeModal('imageModal')">&times;</span>
-          <img id="modalImage" src="" alt="Imagem da Espécie">
-      </div>
-  </div>
+        <div class="modal-image">
+            <span class="closeImg" onclick="closeModal('imageModal')">&times;</span>
+            <img id="modalImage" src="" alt="Imagem da Espécie">
+        </div>
+    </div>
+
     <!-- Modal de Aviso de Compatibilidade -->
     <div id="compatibilityModal" class="modal">
-      <div class="modal-compatibility">
-          <span class="close" onclick="closeModal('compatibilityModal')">&times;</span>
-          <h2>Aviso de Compatibilidade</h2>
-      </div>
+        <div class="modal-compatibility">
+            <span class="close" onclick="closeModal('compatibilityModal')">&times;</span>
+            <h2>Aviso de Compatibilidade</h2>
+        </div>
     </div>
+
+<!-- Modal para Gráfico de pH -->
+<div id="phGraphModal" class="modal">
+    <div class="modal-graph">
+        <span class="close" onclick="closeModal('phGraphModal')">&times;</span>
+        <h2>Gráfico de pH - Últimas 24 Horas</h2>
+        
+        <!-- Seletor de Intervalo de Tempo -->
+        <label for="timeRange">Escolha o intervalo de tempo:</label>
+        <select id="timeRange" onchange="updateGraphData(aquariumIndex, parseInt(this.value))">
+            <option value="1">Últimas 24 horas</option>
+            <option value="3">Últimos 3 dias</option>
+            <option value="7">Últimos 7 dias</option>
+            <option value="14">Últimos 14 dias</option>
+            <option value="30">Últimos 30 dias</option>
+        </select>
+
+        <!-- Canvas para o gráfico -->
+        <canvas id="phGraphCanvas"></canvas>
+    </div>
+</div>
+
     <script src="script.js"></script>
 </body>
 </html>
