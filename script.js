@@ -20,6 +20,7 @@ function openPHGraphModal(aquariumIndex) {
     // Atualiza o gráfico para as últimas 24 horas por padrão
     updateGraphData(aquariumIndex, 1); // Passa o aquariumIndex para updateGraphData
 }
+
 // Função para atualizar os dados do gráfico
 function updateGraphData(aquariumIndex, days = 1) {
     const aquarium = aquariums[aquariumIndex];
@@ -103,7 +104,90 @@ function updateGraphData(aquariumIndex, days = 1) {
         }
     });
 }
+// Função para abrir o gráfico de estabilização
+function openStabilizationGraphModal(aquariumIndex) {
+    const modal = document.getElementById('phGraphModal');
+    modal.style.display = "block"; // Exibe o modal
 
+    // Atualiza o gráfico para o gráfico de estabilização
+    updateStabilizationGraphData(aquariumIndex, 1); // Passa o aquariumIndex para a função
+}
+
+// Função para atualizar os dados do gráfico de estabilização
+function updateStabilizationGraphData(aquariumIndex, days = 1) {
+    const aquarium = aquariums[aquariumIndex];
+    const canvas = document.getElementById('phGraphCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const modalTitle = document.querySelector('#phGraphModal h2');
+    let title = "Gráfico de Estabilização do pH";
+
+    modalTitle.textContent = title;
+
+    // Simula dados de estabilização do pH
+    const timeLabels = [];
+    const phData = [];
+    const currentTime = new Date();
+    const totalPoints = days * 24; // Total de pontos (um por hora)
+
+    let simulatedPH = aquarium.currentPH + (Math.random() * 2 - 1); // Desvio inicial
+
+    for (let i = 0; i < totalPoints; i++) {
+        const hour = new Date(currentTime);
+        hour.setHours(currentTime.getHours() - (totalPoints - i));
+        timeLabels.push(hour.toLocaleDateString() + ' ' + hour.toLocaleTimeString());
+
+        const adjustment = (aquarium.currentPH - simulatedPH) * 0.1;
+        simulatedPH += adjustment + (Math.random() * 0.1 - 0.05);
+        phData.push(simulatedPH.toFixed(2));
+    }
+
+    if (currentChart) {
+        currentChart.destroy();
+    }
+
+    currentChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: timeLabels,
+            datasets: [{
+                label: 'pH do Aquário',
+                data: phData,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: true,
+                tension: 0.3
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    ticks: {
+                        maxRotation: 45,
+                        minRotation: 45
+                    }
+                },
+                y: {
+                    min: 5,
+                    max: 9,
+                    ticks: {
+                        stepSize: 0.5
+                    }
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Estabilização do pH Durante as Simulações',
+                    font: {
+                        size: 16
+                    }
+                }
+            }
+        }
+    });
+}
 // Chama a função de carregamento ao iniciar
 loadSpeciesDB().then(() => {
     renderAquariums(); // Renderiza os aquários após carregar o banco de dados
@@ -143,35 +227,42 @@ function createAquarium() {
 }
 
 // Função para renderizar aquários
+// Renderiza os aquários
 function renderAquariums() {
     const container = document.getElementById('aquariumContainer');
     container.innerHTML = '';
-    
+
     aquariums.forEach((aquarium, index) => {
         const aquariumDiv = document.createElement('div');
         aquariumDiv.className = 'aquarium';
-        
-        // Calcula o estado do aquário (pH e quantidade de peixes)
+
         const { color, message } = checkAquariumStatus(aquarium, index);
-        
-        // Aplica a cor ao aquário com base no estado
+
         aquariumDiv.style.backgroundColor = color;
-        
-        // Cabeçalho do aquário
+
         const header = document.createElement('div');
         header.className = 'aquarium-header';
         header.onclick = () => toggleSpeciesVisibility(index);
-        
+
         const title = document.createElement('h2');
         title.textContent = `${aquarium.name} - ${aquarium.volume}L (pH: ${aquarium.currentPH})`;
-        
-        // Botão de abrir gráfico
+
+        // Botão de abrir gráfico de pH
         const graphBtn = document.createElement('span');
         graphBtn.className = 'graph-icon';
         graphBtn.textContent = '📊';
         graphBtn.onclick = (e) => { 
             e.stopPropagation(); 
-            openPHGraphModal(index); // Passa o índice do aquário
+            openPHGraphModal(index); 
+        };
+
+        // Botão de abrir gráfico de estabilização do pH
+        const stabilizationGraphBtn = document.createElement('span');
+        stabilizationGraphBtn.className = 'graph-icon';
+        stabilizationGraphBtn.textContent = '📈';
+        stabilizationGraphBtn.onclick = (e) => {
+            e.stopPropagation();
+            openStabilizationGraphModal(index);
         };
 
         // Botão de adicionar espécie
@@ -179,26 +270,25 @@ function renderAquariums() {
         addBtn.className = 'add-icon';
         addBtn.textContent = '+';
         addBtn.onclick = (e) => { e.stopPropagation(); openSpeciesModal(index); };
-        
+
         // Botão de deletar aquário
         const deleteBtn = document.createElement('span');
         deleteBtn.className = 'delete-icon';
         deleteBtn.textContent = '🗑️';
         deleteBtn.onclick = (e) => { e.stopPropagation(); deleteAquarium(index); };
-        
+
         header.appendChild(title);
-        header.appendChild(graphBtn); // Botão de gráfico
+        header.appendChild(graphBtn);
+        header.appendChild(stabilizationGraphBtn); // Novo botão de gráfico de estabilização
         header.appendChild(addBtn);
         header.appendChild(deleteBtn);
-        
-        // Exibe a mensagem de erro, se houver
+
         if (message) {
             const warningMessage = document.createElement('p');
             warningMessage.textContent = message;
             aquariumDiv.appendChild(warningMessage);
         }
 
-        // Lista de espécies
         const speciesList = document.createElement('ul');
         speciesList.className = 'species-list';
         speciesList.style.display = aquarium.speciesVisible ? 'block' : 'none';
@@ -220,7 +310,7 @@ function renderAquariums() {
             speciesItem.appendChild(removeBtn);
             speciesList.appendChild(speciesItem);
         });
-        
+
         aquariumDiv.appendChild(header);
         aquariumDiv.appendChild(speciesList);
         container.appendChild(aquariumDiv);
